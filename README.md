@@ -41,7 +41,7 @@ For an example on creating a command line search interface, see the [eztv execut
 
 Query syntax
 ------------
-Extv tries to give you a human friendly free text query syntax.
+Eztv-query tries to give you a human friendly free text query syntax.
 
 Etv-query will try to figure out what specific season and episode you are looking for by matching any [episode syntax](https://github.com/Munter/episode#supported-syntaxes) in your query string. In addition, having `latest` anywhere in your query will automatically default to the latest aired episode.
 
