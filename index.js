@@ -95,7 +95,15 @@ module.exports = function (query, callback) {
                         return season === item.seasonNumber && episode === item.episodeNumber;
                     }
 
-                    return season && item.seasonNumber === season || episode && item.episodeNumber;
+                    if (season) {
+                        return item.seasonNumber === season;
+                    }
+
+                    if (episode) {
+                        return item.episodeNumber === episode;
+                    }
+
+                    return true;
                 });
             }
 
