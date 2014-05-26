@@ -1,5 +1,5 @@
 {
-  "name": "eztv-cli",
+  "name": "eztv-query",
   "version": "0.0.0",
   "description": "Command line interface to find the information about a specific torrent on eztv.it",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Munter/eztv-cli.git"
+    "url": "https://github.com/Munter/eztv-query.git"
   },
   "keywords": [
     "eztv",
