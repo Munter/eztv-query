@@ -1,3 +1,53 @@
+Eztv-query
+==========
+[![NPM version](https://badge.fury.io/js/eztv-query.png)](http://badge.fury.io/js/eztv-query)
+[![Dependency Status](https://david-dm.org/Munter/etv-query.png)](https://david-dm.org/Munter/etv-query)
+
+Query the eztv website for information about a specific TV-series episode.
+
+Takes a free text query string, tries to pull out any specific season and episode search an queries the eztv website using [eztv](https://github.com/moesalih/node-eztv).
+
+If there are multiple results from the queries on a series name or season/episode it will prompt the user in the console to select only one of the options.
+
+Returns a single [episode object](https://github.com/moesalih/node-eztv#getshowepisodesshowid-callback).
+
+Usage
+-----
+```
+var eztvQuery = require('eztv-query');
+
+eztvQuery('house of cards season 2 episode 5', function (err, episode) {
+    console.log(episode);
+});
+
+// Console output:
+{
+  url: '/ep/52222/house-of-cards-2013-s02e05-webrip-x264-2hd/',
+  id: 52222,
+  title: 'House of Cards 2013 S02E05 WEBRip x264-2HD',
+  show: 'House of Cards 2013',
+  seasonNumber: 2,
+  episodeNumber: 5,
+  episodeNumber2: NaN,
+  extra: 'WEBRip x264-2HD',
+  proper: false,
+  repack: false,
+  magnet: 'magnet:?xt=urn:btih:GR7EZAADH6BJG43TLSN2O4YCTDFCKURW&dn=House.of.Cards.2013.S02E05.WEBRip.x264-2HD&tr=udp://tracker.openbittorrent.com:80&tr=udp://tracker.publicbt.com:80&tr=udp://tracker.istole.it:80&tr=udp://open.demonii.com:80&tr=udp://tracker.coppersurfer.tk:80',
+  torrentURL: '//re.zoink.it/52fff796'
+}
+```
+
+For an example on creating a command line search interface, see the [eztv executable](https://github.com/Munter/eztv-query/blob/master/bin/eztv).
+
+Query syntax
+------------
+Extv tries to give you a human friendly free text query syntax.
+
+Etv-query will try to figure out what specific season and episode you are looking for by matching any [episode syntax](https://github.com/Munter/episode#supported-syntaxes) in your query string. In addition, having `latest` anywhere in your query will automatically default to the latest aired episode.
+
+The rest of the query string is passed on to find the series in question.
+
+
 License
 -------
 (The MIT License)
