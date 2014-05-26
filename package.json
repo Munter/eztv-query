@@ -1,6 +1,6 @@
 {
   "name": "eztv-query",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Command line interface to find the information about a specific torrent on eztv.it",
   "main": "index.js",
   "scripts": {
