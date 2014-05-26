@@ -115,6 +115,7 @@ module.exports = function (query, callback) {
 
             if (episodes.length === 1) {
                 callback(undefined, episodes.pop());
+                return;
             }
 
             inquirer.prompt([{
