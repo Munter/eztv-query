@@ -65,7 +65,9 @@ module.exports = function (query) {
                         latestEpisode = item;
                     }
 
-                    if (item.season > latestEpisode.season && item.episode > latestEpisode.episode) {
+                    if (item.season > latestEpisode.season) {
+                        latestEpisode = item;
+                    } else if (item.season >= latestEpisode.season && item.episode > latestEpisode.episode) {
                         latestEpisode = item;
                     }
                 });
